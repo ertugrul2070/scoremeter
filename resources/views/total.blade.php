@@ -1,5 +1,6 @@
 {{--@extends('layouts.header')--}}
 
-<div id="example"></div>
+
+<div id="Example"></div>
 
 <script src="/js/app.js"></script>
