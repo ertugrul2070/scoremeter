@@ -13905,7 +13905,6 @@ module.exports = __webpack_require__(48);
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -13919,7 +13918,6 @@ __webpack_require__(15);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 __webpack_require__(39);
 
 /***/ }),
@@ -36160,10 +36158,12 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36175,55 +36175,91 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Example = function (_Component) {
-    _inherits(Example, _Component);
 
-    function Example() {
-        _classCallCheck(this, Example);
+var Counter = function (_Component) {
+    _inherits(Counter, _Component);
 
-        return _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).apply(this, arguments));
+    function Counter() {
+        _classCallCheck(this, Counter);
+
+        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this));
+
+        _this.state = {
+            count: 0
+        };
+
+        _this.counterIncrement = _this.counterIncrement.bind(_this);
+        _this.counterDecrement = _this.counterDecrement.bind(_this);
+        return _this;
     }
 
-    _createClass(Example, [{
-        key: 'render',
+    _createClass(Counter, [{
+        key: "counterIncrement",
+        value: function counterIncrement(e) {
+            this.setState({ count: this.state.count + 1 });
+        }
+    }, {
+        key: "counterDecrement",
+        value: function counterDecrement(e) {
+            if (this.state.count > 0) {
+                this.setState({ count: this.state.count - 1 });
+            }
+        }
+    }, {
+        key: "render",
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'container' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'row justify-content-center' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'col-md-8' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'card' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card-header' },
-                                'Example Component'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card-body' },
-                                'I\'m a example component!'
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                "div",
+                { className: "container" },
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    "div",
+                    { className: "row " },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        "div",
+                        { className: "col" },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            "span",
+                            null,
+                            this.firstCounter()
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            "button",
+                            { id: "add-btn" },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                "span",
+                                { onClick: this.counterIncrement },
+                                "Add"
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            "button",
+                            { id: "delete-btn", className: "hide-delete-btn" },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                "span",
+                                { onClick: this.counterDecrement },
+                                "Delete"
                             )
                         )
                     )
                 )
             );
         }
+    }, {
+        key: "firstCounter",
+        value: function firstCounter() {
+            var count = this.state.count;
+            return count;
+        }
     }]);
 
-    return Example;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+    return Counter;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Example);
+/* harmony default export */ __webpack_exports__["default"] = (Counter);
 
 
-if (document.getElementById('example')) {
-    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Example, null), document.getElementById('example'));
+if (document.getElementById("counterApp")) {
+    __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Counter, null), document.getElementById("counterApp"));
 }
 
 /***/ }),
