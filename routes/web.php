@@ -11,12 +11,15 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/total', function () {
-    return view('total');
+    $groups = DB::table('groups')->get();
+    return view('total', compact('groups'));
 });
 
 Route::get('/players', function () {
@@ -28,7 +31,5 @@ Route::get('/players', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/total', 'TotalescoreController@index')->name('total');
 
 Route::get('/players', 'AllplayersController@index')->name('total');
