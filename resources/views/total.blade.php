@@ -1,5 +1,5 @@
-{{--@extends('layouts.header')--}}
+@extends('layouts.header')
 
-<div id="example"></div>
-
-<script src="/js/app.js"></script>
+@foreach($groups as $key => $data)
+    <p>{{$data->group_name}}</p>
+@endforeach
