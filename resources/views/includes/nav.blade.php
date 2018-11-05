@@ -14,6 +14,12 @@
                             @endauth
                         @endif
 
+                    <div class="scouting-info">
+                        <li>
+                        <h1>Scouting </br> &nbsp; Marnix</h1>
+                        </li>
+                    </div>
+
                     <div  class="userAccount">
                     @if (Route::has('login'))
                         @auth
@@ -25,11 +31,10 @@
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
-                                </form></li>                            @else
-                    <li ><a href="{{ route('login') }}">Login</a></li>
-                            <div class="register">
-                    <li><a href="{{ route('register') }}" class="register-button">Meld Aan</a></li>
-                            </div>
+                                </form></li>                         @else
+                                <div class="login-btn">
+                    <li ><a href="{{ route('login') }}">Inloggen</a></li>
+                                </div>
                         @endauth
                     @endif
                     </div>
