@@ -11,4 +11,7 @@ require("./bootstrap");
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-require("./components/Counter");
+require("./components/Gryffindor");
+require("./components/Slytherin");
+require("./components/Hufflepuff");
+require("./components/Ravenclaw");

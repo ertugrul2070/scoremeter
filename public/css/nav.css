@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "harry_pregular";
+    src: url("../css/fonts/harry-potter-webfont.woff2") format("woff2"),
+        url("../css/fonts/harry-potter-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+.navbar-inner {
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+#nav {
+    padding: 10px 0 0 150px;
+    width: 100%;
+}
+
+#nav li {
+    list-style: none;
+    padding-right: 30px;
+    float: left;
+}
+
+#nav li a,
+#nav a:visited,
+#nav a:active {
+    text-decoration: none !important;
+    font-family: "Montserrat", sans-serif;
+    color: #272727;
+}
+
+.scouting-info h1 {
+    font-family: "harry_pregular";
+    color: #e0ab2b;
+    font-size: 60px;
+    position: absolute;
+    margin: 0;
+    left: 47%;
+    margin-left: -50px !important;
+    margin-top: 10px;
+    display: block;
+    top: 0 !important;
+}
+
+.userAccount {
+    float: right;
+    margin: 0 30px 0 0;
+}
+
+.login-btn {
+    background-color: #e0ab2b;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    padding: 5px 0 0 42px;
+    cursor: pointer;
+}
+
+.login-btn li a {
+    color: white !important;
+}
+
+@media screen and (max-width: 840px) {
+    #nav {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
+    }
+
+    #nav li {
+        margin: auto;
+        padding-right: 0;
+    }
+
+    li {
+        margin-bottom: 1px;
+    }
+
+    #nav li a {
+        width: 100%;
+    }
+
+    .userAccount {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .register {
+        margin: auto;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .register {
+        padding: 0;
+    }
+}
