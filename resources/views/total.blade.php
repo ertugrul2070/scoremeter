@@ -5,6 +5,7 @@
         <div class="row ">
             <div class="col">
                 <div id="Gryffindor"></div>
+                <h1>Hoi</h1>
             </div>
             <div class="col">
                 <div id="Slytherin"></div>
