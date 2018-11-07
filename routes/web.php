@@ -14,22 +14,32 @@
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/total', function () {
-    $groups = DB::table('groups')->get();
-    return view('total', compact('groups'));
+Route::group(['middleware' => ['auth']], function() {
+
+    Route::get('/welcome', function () {
+        return view('welcome');
+    });
+
+    Route::get('/total', function () {
+        $groups = DB::table('groups')->get();
+        return view('total', compact('groups'));
+    });
+    
+    Route::get('/players', function () {
+        return view('players');
+    });
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/players', 'AllplayersController@index')->name('total');
 });
 
-Route::get('/players', function () {
-    return view('players');
-});
+
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/players', 'AllplayersController@index')->name('total');

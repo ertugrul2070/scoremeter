@@ -3,14 +3,10 @@
             <ul id="nav">
                     @if (Route::has('login'))
                             @auth
-                            <li><a href="{{url ('/home')}}">Home</a></li>
+                            <li><a href="{{url ('/welcome')}}">Home</a></li>
                             <li><a href="{{url ('/total')}}">Totaal</a></li>
                             <li><a href="{{url ('/players')}}">Players</a></li>
                         @else
-                            <li><a href="{{url ('/home')}}">Home</a></li>
-                            <li><a href="{{url ('/total')}}">Totaal</a></li>
-                            <li><a href="{{url ('/players')}}">Players</a></li>
-
                             @endauth
                         @endif
 
