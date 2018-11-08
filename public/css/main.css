@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "harry_pregular";
+    src: url("../css/fonts/harry-potter-webfont.woff2") format("woff2"),
+        url("../css/fonts/harry-potter-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
     margin: 0;
