@@ -3,10 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Participants;
+use Illuminate\Support\Facades\DB;
 
 class AllplayersController extends Controller
 {
-    public function index() {
-        return view('/players');
+    public function index()
+    {
+
+        $participants = Participants::all()->toArray();
+        return view('/players', compact('participants'));
+    }
+
+    public function getParticipants()
+    {
+        Participants::select('participants.name', 'participants.lastname', 'groups.group_name', 'participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->get();
+    }
+
+    public function score(Request $request)
+    {
+        $id = $request->input('plus');
+
+        Participants::where('participants.id',$id)
+            ->update(['score' => +1]);
     }
 }

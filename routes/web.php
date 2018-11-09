@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\DB;
+use App\Participants;
 
 Route::get('/', function () {
     return view('home');
@@ -29,17 +30,33 @@ Route::group(['middleware' => ['auth']], function() {
     });
     
     Route::get('/players', function () {
-        return view('players');
+        $participants = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Gryffindor'])
+            ->get();
+
+        $participants2 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Slytherin'])
+            ->get();
+
+        $participants3 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Hufflepuff'])
+            ->get();
+
+        $participants4 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Ravenclaw'])
+            ->get();
+
+        return view('players', compact('participants', 'participants2', 'participants3', 'participants4'));
     });
 
     Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::get('/players', 'AllplayersController@index')->name('total');
+    Route::post('/players', 'AllplayersController@score');
 });
 
 
 
-
-
 Auth::routes();
-
