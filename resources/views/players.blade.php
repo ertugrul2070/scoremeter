@@ -9,14 +9,15 @@
                 <div id="Gryffindor1"></div>
                 <h2>Gryffindor</h2>
 
-
                 @foreach($participants as $key => $data)
-                    {{$data->name}}
-                    {{$data->lastname}}
-                    {{$data->score}}
-                    <input type="submit" value="{{$data->id}}" name="plus"/><br>
+                    <table>
+                        <tr>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->lastname}}</td>
+                            <td>{{$data->score}}</td>
+                        </tr>
+                    </table>
                 @endforeach
-
 
 
             </div>
@@ -25,12 +26,13 @@
                 <h2>Slytherin</h2>
 
                 @foreach($participants2 as $key => $data)
-                    {{$data->name}}
-                    {{$data->lastname}}
-                    {{$data->score}}
-                    <input type="submit" id="minus" name="minus" value="-">
-                    <input type="submit" id="plus" name="plus" value="+"><br>
-                @endforeach
+                    <table>
+                        <tr>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->lastname}}</td>
+                            <td>{{$data->score}}</td>
+                        </tr>
+                    </table>@endforeach
 
             </div>
             <div class="col">
@@ -38,11 +40,13 @@
                 <h2>Hufflepuff</h2>
 
                 @foreach($participants3 as $key => $data)
-                    {{$data->name}}
-                    {{$data->lastname}}
-                    {{$data->score}}
-                    <input type="submit" id="minus" name="minus" value="-">
-                    <input type="submit" id="plus" name="plus" value="+"><br>
+                    <table>
+                        <tr>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->lastname}}</td>
+                            <td>{{$data->score}}</td>
+                        </tr>
+                    </table>
                 @endforeach
 
             </div>
@@ -51,11 +55,13 @@
                 <h2>Ravenclaw</h2>
 
                 @foreach($participants4 as $key => $data)
-                    {{$data->name}}
-                    {{$data->lastname}}
-                    {{$data->score}}
-                    <input type="submit" id="minus" name="minus" value="-">
-                    <input type="submit" id="plus" name="plus" value="+"><br>
+                    <table>
+                        <tr>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->lastname}}</td>
+                            <td>{{$data->score}}</td>
+                        </tr>
+                    </table>
                 @endforeach
 
             </div>

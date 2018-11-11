@@ -25,8 +25,13 @@ class AllplayersController extends Controller
     public function score(Request $request)
     {
         $id = $request->input('plus');
+        $score = Participants::select('*')
+            ->where('id', '=' , $id)
+            ->get();
+        dd($score);
+        $count = ++$score;
 
         Participants::where('participants.id',$id)
-            ->update(['score' => +1]);
+            ->update(['score' => $count]);
     }
 }
