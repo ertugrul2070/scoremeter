@@ -7,6 +7,7 @@
 <div class="container">
     <nav>
         @include('includes.nav')
+        @include('includes.head')
     </nav>
 
     <div class="main">
