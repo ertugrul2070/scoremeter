@@ -128,4 +128,28 @@
     </div>
 
 <script src="{{mix('js/app.js')}}"></script>
+
+    <?php
+
+    $time = \Carbon\Carbon::now();
+    $hour = $time->toDateTimeString()[11] . $time->toDateTimeString()[12];
+    $HMS = $time->toDateTimeString()[11] . $time->toDateTimeString()[12] . $time->toDateTimeString()[13] . $time->toDateTimeString()[14] .
+        $time->toDateTimeString()[15] . $time->toDateTimeString()[16] . $time->toDateTimeString()[17] . $time->toDateTimeString()[18];
+    $day = $time->toDateTimeString()[8] . $time->toDateTimeString()[9];
+
+    if ($HMS == "17:55:00 => 18:00:00 && 18:00:00 =< 17:55:00")
+    {
+        \Illuminate\Support\Facades\DB::table('totalscore')->insert([
+            ['total_gryf' => 25,
+            'total_slyth' => 20,
+            'total_huffle' => 50,
+            'total_raven' => 40,
+            'date' => $time,
+            'created_at' => $time],
+        ]);
+    }
+
+    echo $HMS;
+
+    ?>
 @endsection
