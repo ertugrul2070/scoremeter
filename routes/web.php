@@ -28,7 +28,11 @@ Route::group(['middleware' => ['auth']], function() {
         $groups = DB::table('groups')->get();
         return view('total', compact('groups'));
     });
-    
+
+    Route::get('/settings', function (){
+        return view('settings');
+    });
+
     Route::get('/players', function () {
         $participants = Participants::select('participants.*', 'groups.group_name')
             ->join('groups', 'participants.group_id', '=', 'groups.id')
@@ -54,7 +58,8 @@ Route::group(['middleware' => ['auth']], function() {
     });
 
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::post('/players', 'AllplayersController@score');
+
+    Route::post('/settings', 'SettingsController@saveScore');
 });
 
 
