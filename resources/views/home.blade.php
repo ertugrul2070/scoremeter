@@ -23,7 +23,7 @@
 
 <div class="home-container">
     <div class="home-wrapper">
-            <h1>Scouting </br> &nbsp; Marnix</h1>
+            <h1>Scouting </br> &nbsp; De Hoeve</h1>
     </div>
     <div class="home-login-wrapper">
             <div class="card-body">
