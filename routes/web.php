@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\DB;
+use App\Participants;
 
 Route::get('/', function () {
     return view('home');
@@ -24,22 +25,51 @@ Route::group(['middleware' => ['auth']], function() {
     });
 
     Route::get('/total', function () {
-        $groups = DB::table('groups')->get();
-        return view('total', compact('groups'));
+        $participants = Participants::select('participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Gryffindor'])
+            ->get();
+
+        foreach ($participants as $key => $data)
+        {
+            echo $data->score;
+        }
+        return view('total', compact('participants'));
     });
-    
+
+    Route::get('/settings', function (){
+        return view('settings');
+    });
+
     Route::get('/players', function () {
-        return view('players');
+        $participants = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Gryffindor'])
+            ->get();
+
+        $participants2 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Slytherin'])
+            ->get();
+
+        $participants3 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Hufflepuff'])
+            ->get();
+
+        $participants4 = Participants::select('participants.*', 'groups.group_name')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Ravenclaw'])
+            ->get();
+
+        return view('players', compact('participants', 'participants2', 'participants3', 'participants4'));
     });
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/players', 'AllplayersController@index')->name('total');
+    Route::post('/settings', 'SettingsController@saveScore');
 });
 
 
 
-
-
 Auth::routes();
-

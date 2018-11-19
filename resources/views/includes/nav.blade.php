@@ -6,6 +6,7 @@
                             <li><a href="{{url ('/welcome')}}">Home</a></li>
                             <li><a href="{{url ('/total')}}">Totaal</a></li>
                             <li><a href="{{url ('/players')}}">Players</a></li>
+                            <li><a href="{{url ('/settings')}}">Instellingen</a></li>
                         @else
                             @endauth
                         @endif
