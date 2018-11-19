@@ -13,7 +13,7 @@
 
                     <div class="scouting-info">
                         <li>
-                        <h1>Scouting </br> &nbsp; Marnix</h1>
+                        <h1>Scouting </br> &nbsp; De Hoeve</h1>
                         </li>
                     </div>
 
