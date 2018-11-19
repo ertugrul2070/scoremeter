@@ -25,8 +25,16 @@ Route::group(['middleware' => ['auth']], function() {
     });
 
     Route::get('/total', function () {
-        $groups = DB::table('groups')->get();
-        return view('total', compact('groups'));
+        $participants = Participants::select('participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Gryffindor'])
+            ->get();
+
+        foreach ($participants as $key => $data)
+        {
+            echo $data->score;
+        }
+        return view('total', compact('participants'));
     });
 
     Route::get('/settings', function (){
