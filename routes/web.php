@@ -29,13 +29,46 @@ Route::group(['middleware' => ['auth']], function() {
             ->join('groups', 'participants.group_id', '=', 'groups.id')
             ->whereIn('groups.group_name', ['Gryffindor'])
             ->get();
-
-        foreach ($participants as $key => $data)
+        $totalg = 0;
+        foreach ($participants as $data)
         {
-            echo $data->score;
+            $totalg = $totalg + $data->score;
         }
-        return view('total', compact('participants'));
+
+        $participants2 = Participants::select('participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Slytherin'])
+            ->get();
+        $totals = 0;
+        foreach ($participants2 as $data)
+        {
+            $totals = $totals + $data->score;
+        }
+
+        $participants3 = Participants::select('participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Hufflepuff'])
+            ->get();
+        $totalh = 0;
+        foreach ($participants3 as $data)
+        {
+            $totalh = $totalh + $data->score;
+        }
+
+        $participants4 = Participants::select('participants.score')
+            ->join('groups', 'participants.group_id', '=', 'groups.id')
+            ->whereIn('groups.group_name', ['Ravenclaw'])
+            ->get();
+        $totalr = 0;
+        foreach ($participants4 as $data)
+        {
+            $totalr = $totalr + $data->score;
+        }
+
+
+        return view('total', compact('totalg', 'totals', 'totalh', 'totalr'));
     });
+
 
     Route::get('/settings', function (){
         return view('settings');

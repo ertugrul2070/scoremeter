@@ -1,3 +1,12 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        setInterval(function ()
+        {
+            $(#total).load('')
+        }, 2000)
+    </script>
 <style>
     #Gryffindor1{
         background-color: #D74F3F;
@@ -45,14 +54,14 @@
         margin-bottom: -2%;
     }
 
-    #teamParts{
-        margin-left:35%;
-        font-size: 25px;
+    #total{
+        font-size: 300%;
         color: white;
         font-family: 'Montserrat', sans-serif;
     }
 
 </style>
+</head>
 @extends('layouts.total')
 
 @section('content')
@@ -64,12 +73,9 @@
                     <div id="Gryffindor1">
                         <h2 id="teamName">Gryffindor</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd7748a56a98b0ba36f6bbd/9349e53ad34d2b97164ba4db99cd7569/gryffindor.png">
-                        @foreach($participants as $key => $data)
-                            <table id="teamParts">
-                                <tr>
-                                </tr>
-                            </table>
-                        @endforeach
+                        <div id="total">
+                            {{$totalg}}
+                        </div>
                     </div>
                 </div>
 
@@ -77,11 +83,13 @@
                     <div id="Slytherin2">
                         <h2  id="teamName">Slytherin</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd77494c273ed0ca7a8ffcf/584264f7e2bc24c062758c2dbbfb0be0/slytherin.png">
-                        @foreach($participants as $key => $data)
                             <table id="teamParts">
                                 <tr>
+                                    <div id="total">
+                                    {{$totals}}
+                                    </div>
                                 </tr>
-                            </table>@endforeach
+                            </table>
                     </div>
                 </div>
 
@@ -89,12 +97,13 @@
                     <div id="Hufflepuff3">
                         <h2  id="teamName">Hufflepuff</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd7749cfd202140c323514f/a0a07137f5171211bd6a1bffdb45a218/hufflepuff.png">
-                        @foreach($participants as $key => $data)
                             <table id="teamParts">
                                 <tr>
+                                    <div id="total">
+                                        {{$totalh}}
+                                    </div>
                                 </tr>
                             </table>
-                        @endforeach
                     </div>
                 </div>
 
@@ -102,12 +111,13 @@
                     <div id="Ravenclaw4">
                         <h2  id="teamName">Ravenclaw</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd774a35eff9f34536e0d7b/dd34438282516d5bd2ef6df0e2db5599/ravenclaw.png">
-                        @foreach($participants as $key => $data)
                             <table id="teamParts">
                                 <tr>
+                                    <div id="total">
+                                        {{$totalr}}
+                                    </div>
                                 </tr>
                             </table>
-                        @endforeach
                     </div>
                 </div>
             </form>

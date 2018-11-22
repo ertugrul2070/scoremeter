@@ -6,16 +6,10 @@
                 {{ csrf_field() }}
                 <div class="col">
                     <div id="">
-                        <input type="submit" value="save & reset data" id="save">
+                        <input type="submit" value="save & reset data" id="save" name="save">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
-    <script>
-        $(".save".on("submit", function () {
-            return confirm("Are you sure");
-        }))
-    </script>
 @endsection
