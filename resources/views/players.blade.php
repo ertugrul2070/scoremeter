@@ -75,6 +75,7 @@
                             <td>{{$data->name}}</td>
                             <td>{{$data->lastname}}</td>
                             <td>{{$data->score}}</td>
+                            <td><input type="submit" id="plus" name="plus"></td>
                         </tr>
                     </table>
                 @endforeach
@@ -133,15 +134,10 @@
 <script src="{{mix('js/app.js')}}"></script>
 @endsection
 
-{{--
 <script>
     $(document).ready(function () {
-        $('#plus').click(function () {
-            var plus_punt = $('#score').val();
-            if ($.trim(plus_punt) != '')
-            {
-
-            }
-        })
+        setInterval(function () {
+           $('#Gryffindor1').load().fadeIn("slow");
+        }, 1000)
     })
-</script>--}}
+</script>

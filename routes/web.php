@@ -101,6 +101,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::post('/settings', 'SettingsController@saveScore');
+
+    Route::view('/totaldata', 'totaldata', [
+        'data' => App\Participants::all()
+    ]);
+
+    Route::view('/totalsly', 'totalsly', [
+        'data' => App\Participants::all()
+    ]);
 });
 
 
