@@ -109,6 +109,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::view('/totalsly', 'totalsly', [
         'data' => App\Participants::all()
     ]);
+
+    Route::view('/totalhuff', 'totalhuff', [
+        'data' => App\Participants::all()
+    ]);
+
+    Route::view('/totalra', 'totalra', [
+        'data' => App\Participants::all()
+    ]);
 });
 
 

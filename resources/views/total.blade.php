@@ -12,8 +12,20 @@
                 $('#total1').load('<?php echo url('/totalsly');?>').fadeIn("slow");
             },100);
 
+        var auto_refresh3 = setInterval(
+            function () {
+                $('#total2').load('<?php echo url('/totalhuff');?>').fadeIn("slow");
+            },100);
+
+        var auto_refresh4 = setInterval(
+            function () {
+                $('#total3').load('<?php echo url('/totalra');?>').fadeIn("slow");
+            },100);
+
         auto_refresh1();
         auto_refresh2();
+        auto_refresh3();
+        auto_refresh4();
     </script>
 
     <style>
@@ -101,7 +113,6 @@
                         <h2 id="teamName">Hufflepuff</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd7749cfd202140c323514f/a0a07137f5171211bd6a1bffdb45a218/hufflepuff.png">
                         <div id="total2">
-                            {{$totalh}}
                         </div>
                     </div>
                 </div>
@@ -111,7 +122,6 @@
                         <h2 id="teamName">Ravenclaw</h2>
                         <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd774a35eff9f34536e0d7b/dd34438282516d5bd2ef6df0e2db5599/ravenclaw.png">
                                 <div id="total3">
-                                    {{$totalr}}
                                 </div>
                     </div>
                 </div>
