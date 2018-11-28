@@ -22,16 +22,30 @@ class AllplayersController extends Controller
             ->get();
     }
 
-    public function score(Request $request)
+    public function score(Participants $participants)
     {
-        $id = $request->input('plus');
-        $score = Participants::select('*')
-            ->where('id', '=' , $id)
-            ->get();
-        dd($score);
-        $count = ++$score;
+        $participant = $participants;
 
-        Participants::where('participants.id',$id)
-            ->update(['score' => $count]);
+        $addscore = $participant->score + 10;
+
+        $participant->score = $addscore;
+
+        $participant->save();
+
+        redirect('/players');
+    }
+
+
+    public function minscore(Participants $participants)
+    {
+        $participant = $participants;
+
+        $addscore = $participant->score - 10;
+
+        $participant->score = $addscore;
+
+        $participant->save();
+
+        redirect('/players');
     }
 }

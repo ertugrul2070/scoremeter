@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\DB;
 use App\Participants;
+use App\Totalescore;
 
 Route::get('/', function () {
     return view('home');
@@ -71,7 +72,8 @@ Route::group(['middleware' => ['auth']], function() {
 
 
     Route::get('/settings', function (){
-        return view('settings');
+        $totalscore = DB::table('totalscore')->get();
+        return view('settings', compact('totalscore'));
     });
 
     Route::get('/players', function () {
@@ -101,6 +103,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::post('/settings', 'SettingsController@saveScore');
+
+    Route::get('/players/addscore/{participants}', 'AllplayersController@score')->name('addscore');
+
+    Route::get('/players/minscore/{participants}', 'AllplayersController@minscore')->name('minscore');
 
     Route::view('/totaldata', 'totaldata', [
         'data' => App\Participants::all()

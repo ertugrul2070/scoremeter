@@ -55,6 +55,13 @@
         font-family: 'Montserrat', sans-serif;
     }
 
+    .cs{
+        text-decoration: none;
+        color: white;
+        font-size: 150%;
+        font-family: 'Montserrat', sans-serif;
+    }
+
 </style>
 </head>
 
@@ -63,21 +70,20 @@
 @section('content')
 <div class="container">
         <div class="row ">
-            <form class=""   action="{{url ('/players')}}" method="post">
-                {{ csrf_field() }}
             <div class="col">
                 <div id="Gryffindor1">
                 <h2 id="teamName">Gryffindor</h2>
                     <img src="https://trello-attachments.s3.amazonaws.com/5ba38b137a90a55a3c4955e1/5bd7748a56a98b0ba36f6bbd/9349e53ad34d2b97164ba4db99cd7569/gryffindor.png">
                 @foreach($participants as $key => $data)
-                    <table id="teamParts">
-                        <tr>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->lastname}}</td>
-                            <td>{{$data->score}}</td>
-                            <td><input type="submit" id="plus" name="plus"></td>
-                        </tr>
-                    </table>
+                            <table id="teamParts">
+                                <tr>
+                                    <td>{{$data->name}}</td>
+                                    <td>{{$data->lastname}}</td>
+                                    <td><a class="cs" href="{{route('minscore', $data)}}"> - </a> </td>
+                                    <td>{{$data->score}}</td>
+                                    <td><a class="cs" href="{{route('addscore', $data)}}"> + </a> </td>
+                                </tr>
+                            </table>
                 @endforeach
                 </div>
             </div>
@@ -90,7 +96,9 @@
                         <tr>
                             <td>{{$data->name}}</td>
                             <td>{{$data->lastname}}</td>
+                            <td><a class="cs" href="{{route('minscore', $data)}}"> - </a> </td>
                             <td>{{$data->score}}</td>
+                            <td><a class="cs" href="{{route('addscore', $data)}}"> + </a> </td>
                         </tr>
                     </table>@endforeach
                 </div>
@@ -105,7 +113,9 @@
                         <tr>
                             <td>{{$data->name}}</td>
                             <td>{{$data->lastname}}</td>
+                            <td><a class="cs" href="{{route('minscore', $data)}}"> - </a> </td>
                             <td>{{$data->score}}</td>
+                            <td><a class="cs" href="{{route('addscore', $data)}}"> + </a> </td>
                         </tr>
                     </table>
                 @endforeach
@@ -121,23 +131,17 @@
                         <tr>
                             <td>{{$data->name}}</td>
                             <td>{{$data->lastname}}</td>
+                            <td><a class="cs" href="{{route('minscore', $data)}}"> - </a> </td>
                             <td>{{$data->score}}</td>
+                            <td><a class="cs" href="{{route('addscore', $data)}}"> + </a> </td>
                         </tr>
                     </table>
                 @endforeach
               </div>
             </div>
-            </form>
         </div>
     </div>
 
 <script src="{{mix('js/app.js')}}"></script>
 @endsection
 
-<script>
-    $(document).ready(function () {
-        setInterval(function () {
-           $('#Gryffindor1').load().fadeIn("slow");
-        }, 1000)
-    })
-</script>
