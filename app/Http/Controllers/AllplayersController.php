@@ -32,7 +32,7 @@ class AllplayersController extends Controller
 
         $participant->save();
 
-        redirect('/players');
+        return view('/players');
     }
 
 
