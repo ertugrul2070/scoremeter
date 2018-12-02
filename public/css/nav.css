@@ -45,6 +45,7 @@
     margin-top: 10px;
     display: block;
     top: 0 !important;
+    text-shadow: -2px 0 black, 0 1px black, 2px 0 black, 0 -1px black;
 }
 
 .userAccount {

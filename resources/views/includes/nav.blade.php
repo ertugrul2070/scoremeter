@@ -6,13 +6,14 @@
                             <li><a href="{{url ('/welcome')}}">Home</a></li>
                             <li><a href="{{url ('/total')}}">Totaal</a></li>
                             <li><a href="{{url ('/players')}}">Players</a></li>
+                            <li><a href="{{url ('/settings')}}">Reset & Opslaan</a></li>
                         @else
                             @endauth
                         @endif
 
                     <div class="scouting-info">
                         <li>
-                        <h1>Scouting </br> &nbsp; Marnix</h1>
+                        <h1>Scouting </br> &nbsp; De Hoeve</h1>
                         </li>
                     </div>
 
