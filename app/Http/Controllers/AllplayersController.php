@@ -31,8 +31,6 @@ class AllplayersController extends Controller
         $participant->score = $addscore;
 
         $participant->save();
-
-        return view('/players');
     }
 
 
@@ -45,7 +43,5 @@ class AllplayersController extends Controller
         $participant->score = $addscore;
 
         $participant->save();
-
-        redirect('/players');
     }
 }
