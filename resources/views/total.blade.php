@@ -5,22 +5,22 @@
         var auto_refresh1 = setInterval(
             function () {
                 $('#total').load('<?php echo url('/totaldata');?>').fadeIn("slow");
-            },100);
+            },2000);
 
         var auto_refresh2 = setInterval(
             function () {
                 $('#total1').load('<?php echo url('/totalsly');?>').fadeIn("slow");
-            },100);
+            },2000);
 
         var auto_refresh3 = setInterval(
             function () {
                 $('#total2').load('<?php echo url('/totalhuff');?>').fadeIn("slow");
-            },100);
+            },2000);
 
         var auto_refresh4 = setInterval(
             function () {
                 $('#total3').load('<?php echo url('/totalra');?>').fadeIn("slow");
-            },100);
+            },2000);
 
         auto_refresh1();
         auto_refresh2();
