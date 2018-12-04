@@ -77,5 +77,8 @@ class SettingsController extends Controller
                 'date' => Carbon::now(),
                 'created_at' => Carbon::now()],
         ]);
+
+        DB::table('participants')->update(['score' => 0]);
+
     }
 }
