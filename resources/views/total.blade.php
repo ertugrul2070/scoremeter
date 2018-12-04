@@ -27,61 +27,6 @@
         auto_refresh3();
         auto_refresh4();
     </script>
-
-    <style>
-        #Gryffindor1 {
-            background-color: #D74F3F;
-            width: 25%;
-            height: 92%;
-            text-align: center;
-            display: inline-block;
-            float: left;
-            -webkit-box-shadow: 0 0 20px 0px #000 inset;
-        }
-
-        #Slytherin2 {
-            background-color: #005D5B;
-            float: left;
-            width: 25%;
-            height: 92%;
-            text-align: center;
-            display: inline-block;
-            -webkit-box-shadow: 0 0 20px 0px #000 inset;
-        }
-
-        #Hufflepuff3 {
-            background-color: #FDB82D;
-            float: left;
-            width: 25%;
-            height: 92%;
-            text-align: center;
-            display: inline-block;
-            -webkit-box-shadow: 0 0 20px 0px #000 inset;
-        }
-
-        #Ravenclaw4 {
-            background-color: #21326A;
-            width: 25%;
-            height: 92%;
-            text-align: center;
-            display: inline-block;
-            -webkit-box-shadow: 0 0 20px 0px #000 inset;
-        }
-
-        #teamName {
-            font-family: "harry_pregular";
-            font-size: 100px;
-            color: #ffffff;
-            margin-bottom: -2%;
-        }
-
-        #total, #total1, #total2, #total3 {
-            font-size: 300%;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-    </style>
 </head>
 @extends('layouts.total')
 
@@ -90,6 +35,8 @@
         <div class="row ">
             <form class="" action="{{url ('/players')}}" method="post">
                 {{ csrf_field() }}
+                <div class="team-wrapper">
+                <div class="section1">
                 <div class="col">
                     <div id="Gryffindor1">
                         <h2 id="teamName">Gryffindor</h2>
@@ -107,7 +54,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="section2">
                 <div class="col">
                     <div id="Hufflepuff3">
                         <h2 id="teamName">Hufflepuff</h2>
@@ -125,6 +74,8 @@
                                 </div>
                     </div>
                 </div>
+            </div>
+        </div>
             </form>
         </div>
     </div>
