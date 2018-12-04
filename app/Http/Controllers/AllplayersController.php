@@ -15,12 +15,14 @@ class AllplayersController extends Controller
         return view('/players', compact('participants'));
     }
 
+
     public function getParticipants()
     {
         Participants::select('participants.name', 'participants.lastname', 'groups.group_name', 'participants.score')
             ->join('groups', 'participants.group_id', '=', 'groups.id')
             ->get();
     }
+
 
     public function score(Participants $participants)
     {
@@ -31,6 +33,8 @@ class AllplayersController extends Controller
         $participant->score = $addscore;
 
         $participant->save();
+
+        return redirect('/players');
     }
 
 
@@ -43,5 +47,7 @@ class AllplayersController extends Controller
         $participant->score = $addscore;
 
         $participant->save();
+
+        return redirect('/players');
     }
 }
