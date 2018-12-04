@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Participants;
-use Illuminate\Support\Facades\DB;
 
 class AllplayersController extends Controller
 {

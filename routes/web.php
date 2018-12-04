@@ -13,7 +13,6 @@
 
 use Illuminate\Support\Facades\DB;
 use App\Participants;
-use App\Totalescore;
 
 Route::get('/', function () {
     return view('home');

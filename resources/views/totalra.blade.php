@@ -1,7 +1,6 @@
 <?php
 
 use App\Participants;
-use Illuminate\Support\Facades\DB;
 
 $participants4 = Participants::select('participants.score')
     ->join('groups', 'participants.group_id', '=', 'groups.id')

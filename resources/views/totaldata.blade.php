@@ -1,10 +1,6 @@
-{{--
-@foreach($data as $child)
-    {{$child->score}}
-    @endforeach--}}
 <?php
-        use App\Participants;
-        use Illuminate\Support\Facades\DB;
+
+use App\Participants;
 
 
 $participants = Participants::select('participants.score')

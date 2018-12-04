@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Participants;
@@ -18,12 +17,6 @@ class SettingsController extends Controller
 
     public function saveScore()
     {
-        /*$time = Carbon::now();
-        $hour = $time->toDateTimeString()[11] . $time->toDateTimeString()[12];
-        $HMS = $time->toDateTimeString()[11] . $time->toDateTimeString()[12] . $time->toDateTimeString()[13] . $time->toDateTimeString()[14] .
-            $time->toDateTimeString()[15] . $time->toDateTimeString()[16] . $time->toDateTimeString()[17] . $time->toDateTimeString()[18];
-        $day = $time->toDateTimeString()[8] . $time->toDateTimeString()[9];*/
-
         $gryf = Participants::select('participants.score')
             ->join('groups', 'participants.group_id', '=', 'groups.id')
             ->whereIn('groups.group_name', ['Gryffindor'])
