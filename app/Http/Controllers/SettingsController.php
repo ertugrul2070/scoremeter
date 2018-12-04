@@ -80,5 +80,7 @@ class SettingsController extends Controller
 
         DB::table('participants')->update(['score' => 0]);
 
+        return redirect('/settings');
+
     }
 }
