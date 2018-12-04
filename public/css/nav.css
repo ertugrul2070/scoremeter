@@ -11,7 +11,6 @@
     display: flex;
     width: 100%;
     font-size: 18px;
-    font-weight: 600;
     position: relative;
 }
 
@@ -107,5 +106,11 @@
 
     .register {
         padding: 0;
+    }
+
+    .scouting-info h1 {
+        left: 15%;
+        font-size: 30px;
+        margin-top: 30px;
     }
 }

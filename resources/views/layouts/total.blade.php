@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('includes.head')
+    <link href="{{asset ('css/total.css')}}" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <div class="container">

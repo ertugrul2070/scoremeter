@@ -1,0 +1,88 @@
+form {
+    margin: 0 !important;
+}
+.team-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.team-wrapper .section1 {
+    display: flex;
+    position: relative;
+}
+
+.team-wrapper .section2 {
+    display: flex;
+    position: relative;
+}
+
+.col {
+    height: 100%;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.team-wrapper .section1 .col:nth-child(1) {
+    background-color: #d74f3f;
+    -webkit-box-shadow: 0 0 20px 0px #000 inset;
+    padding: 3em;
+}
+
+.team-wrapper .section1 .col:nth-child(2) {
+    background-color: #005d5b;
+    -webkit-box-shadow: 0 0 20px 0px #000 inset;
+    padding: 3em;
+}
+
+.team-wrapper .section2 .col:nth-child(1) {
+    background-color: #fdb82d;
+    -webkit-box-shadow: 0 0 20px 0px #000 inset;
+    padding: 3em;
+}
+
+.team-wrapper .section2 .col:nth-child(2) {
+    background-color: #21326a;
+    -webkit-box-shadow: 0 0 20px 0px #000 inset;
+    padding: 3em;
+}
+
+#teamName {
+    font-family: "harry_pregular";
+    font-size: 6vw;
+    color: #ffffff;
+}
+
+#total,
+#total1,
+#total2,
+#total3 {
+    font-size: 300%;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (max-width: 1050px) {
+    .team-wrapper {
+        display: grid;
+        height: auto;
+    }
+
+    /* img {
+        display: block;
+        height: auto;
+        width: 100%;
+    } */
+}
+
+/* @media screen and (max-width: 1380px) {
+    #teamName {
+        font-size: 7vw;
+    }
+} */
